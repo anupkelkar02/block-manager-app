@@ -1,0 +1,29 @@
+<table class="table table-striped table-sortable">
+  <thead>
+    <tr>
+      <th>
+        Referance
+      </th>
+
+      <th>
+        Name
+      </th>
+
+      <th>
+        Site
+      </th>
+      <th>
+        Create Date
+      </th>
+      <th>
+        Action
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each block as |block|}}
+    {{block-index-table-row block=block deleteBlock=(action 'deleteBlock')}}
+    {{/each}}
+  </tbody>
+</table>

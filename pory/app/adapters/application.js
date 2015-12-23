@@ -6,3 +6,4 @@ var db = new PouchDB('sap_software');
 export default Adapter.extend({
   db: db
 });
+

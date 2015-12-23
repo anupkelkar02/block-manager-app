@@ -1,0 +1,74 @@
+﻿<div id="createBlockAlertSuccess" class="{{alertSuccessClass}}" role="alert" hidden="">
+  {{alertSuccessMessage}}
+</div>
+<div class="modal fade" id="createBlockModal" tabindex="-1" role="dialog">
+  <form {{action "validate" on="submit"}} hidden={{messageSent}}>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" area-label="close">
+            <span class="fa fa-times" aria-hidden="true"></span>
+            <span class="sr-only">Close</span>
+          </button>
+
+          <h4 class="modal-title">
+            Create Block
+          </h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="{{alertErrorClass}}" role="alert">
+            {{alertErrorMessage}}
+          </div>
+
+          <fieldset class="{{referenceField}}">
+            <label for="reference">
+              Reference
+            </label>
+
+            {{input value=reference id="createBlockModalReferance" type="text" class=referenceInput placeholder="Reference"}}
+          </fieldset>
+
+          <fieldset class="{{nameField}}">
+            <label for="nameField">
+              Name
+            </label>
+
+            {{input value=name id="createBlockModalName" type="text" class=nameInput placeholder="Name"}}
+          </fieldset>
+
+          <fieldset class="{{siteField}}">
+            <label for="siteField">
+              Site
+            </label>
+
+            {{input value=site id="createBlockModalSite" type="text" class=siteInput placeholder="Site"}}
+          </fieldset>
+
+         
+            {{#each surveyors as |surveyor|}}
+            {{surveyor-index-table-row surveyor=surveyor deleteSurveyor=(action 'deleteSurveyor')}}
+            {{/each}}
+
+
+        
+    
+          
+          
+          {{input value=currentdate id="createBlockModalCreateDate" type="hidden"}}
+        </div>
+        
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Cancel
+          </button>
+
+          <button type="submit" class="btn btn-primary">
+            Create
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

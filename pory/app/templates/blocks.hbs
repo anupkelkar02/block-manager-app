@@ -1,0 +1,27 @@
+﻿<div class="jumbotron p-a m-t-lg">
+  <h1>
+    Blocks
+  </h1>
+
+  <p class="lead">
+    Here you can view and manage blocks.
+  </p>
+
+  <hr class="m-y">
+
+    <p class="lead">
+      <button class="btn btn-secondary" data-toggle="modal" data-target="#createBlockModal">
+        <span class="fa fa-plus-circle"></span>
+        Create
+      </button>
+    </p>
+  </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      {{block-create-form process=(action 'createBlock')}}
+      {{block-edit-form process=(action 'editBlock')}}
+      {{block-index-table block=model deleteBlock=(action 'deleteBlock')}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<td>
+  {{block.reference}}
+</td>
+
+<td>
+  {{block.name}}
+</td>
+
+<td>
+  {{block.site}}
+</td>
+<td>
+  {{block.creationdate}}
+</td>
+
+<td>
+    <div class="btn-group" role="group">
+        <button {{action "editBlock" on="click"}} type="button" class="btn btn-primary btn-sm">
+            Edit
+        </button>
+
+        <div class="btn-group" role="group">
+            <button type="button" 
+                    class="btn btn-secondary btn-sm"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false">
+                <span class="fa fa-caret-down"></span>
+            </button>
+
+            <div class="dropdown-menu">
+                <button {{action "deleteBlock" on="click"}} type="button" class="dropdown-item">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</td>

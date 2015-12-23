@@ -8,6 +8,9 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('surveyors');
 });
+Router.map(function() {
+  this.route('blocks');
+});
 
 Ember.Router.reopen({
 
